@@ -1,0 +1,13 @@
+1. Decision boundaries are the fundamental idea behind SVMs. SVMs can be used to perform linear or nonlinear classification, regression, and outlier detection.
+
+2. A support vector is is the instance that is located on the edge of the margins of a decision boundary.
+
+3. It's important to scale inputs when using SVMs because SVMs are sensitive to outliers.
+
+4. No A SVM classifier can not output a confidence score or probability.
+
+5. When you have more instances than features then you should use the primal form of the SVM.
+
+6. If the SVM classifier with an RBF kernel is underfitting the training set then you should increase gamma, same with the C parameter.
+
+7. H will be an np x no identity matrix. f will be an np vector full of 0s. A will be an nc x np matrix (nc = number of constraints). b will be an nc vector full of 1s.

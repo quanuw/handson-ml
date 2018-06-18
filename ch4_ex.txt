@@ -1,0 +1,42 @@
+1. What Linear Regression training algorithm can you use if you have a training set with millions of features?
+Can you gradient descent, batch gradient descent, stochastic gradient descent, or mini-batch gadient descent.
+
+2. Suppose the features in your training set have very different scales. What algorithms might suffer from this, and how? What can you do about it?
+All GD algorithms will suffer from differences in scale. Different scale can cause greatly increase convergence time. Can use sci-kit learns standard scaler class to ensure all features have a similar scale.
+
+3. Can Gradient Descent get stuck in a local minimum when training a Logistic Regression model?
+No, the Logistic Regression model has a convex cost function. This means that GD or any other optimization algorithm is guaranteed to find a global minimum (if the learning rate is not too large and you wait long enough).
+
+4. Do all Gradient Descent algorithms lead to the same model provided you let them run long enough?
+Yes.
+
+5. Suppose you use Batch Gradient Descent and you plot the validation error at every epoch. If you notice that the validation error consistently goes up, what is likely going on? How can you fix this?
+If validation error is going up then over fitting is occuring. To overcome this you can save the model that produced the minimal validation error. Another obvious problem is that you forgot to subtract the gradient vector from the theta since the gradient vector always points uphill.
+
+6. Is it a good idea to stop Mini-batch Gradient Descent immediately when the validation error goes up?
+No.
+
+7. Which Gradient Descent algorithm (among those we discussed) will reach the vicinity of the optimal solution the fastest? Which will actually converge? How can you make the others converge as well?
+Stochastic GD will be the fastest. Batch GD will actually converge because it uses the entire training set. Can mae others converge by lowering the learning curve and running longer.
+
+8. Suppose you are using Polynomial Regression. You plot the learning curves and you notice that there is a large gap between the training error and the validation error. What is happening? What are three ways to solve this?
+Overfitting is likely happening. 3 solutions: get more data for training set, remove some features (regularize), data augmentation.
+
+9. Suppose you are using Ridge Regression and you notice that the training error and the validation error are almost equal and fairly high. Would you say that the model suffers from high bias or high variance? Should you increase the regularization hyperparameter α or reduce it?
+There is high bias. Should reduce the hyperparameter.
+
+10. Why would you want to use:
+
+11. Ridge Regression instead of plain Linear Regression (i.e., without any regularization)?
+Using a regularization method can reduce overfitting in a model by constraining it to fewer degrees of freedom.
+
+12. Lasso instead of Ridge Regression?
+Lasso regression will elinate the weights of the least important features (feature selection) which is important to optimize your regression model. Less features means less variance so models can generalize better too.
+
+13. Elastic Net instead of Lasso?
+Elastic Net would be preferred because Lasso may be erratic when their are more features than training instances.
+
+14. Suppose you want to classify pictures as outdoor/indoor and daytime/nighttime. Should you implement two Logistic Regression classifiers or one Softmax Regression classifier?
+Two Logisic Regression classifiers because Softmax Regression is not multioutput and can't do this task with one model.
+
+15. Implement Batch Gradient Descent with early stopping for Softmax Regression (without using Scikit-Learn).
