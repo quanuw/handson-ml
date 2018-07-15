@@ -1,2 +1,3 @@
 model_checkpoint_path: "my_dnn_model"
+all_model_checkpoint_paths: "/tmp/my_dnn_model.ckpt"
 all_model_checkpoint_paths: "my_dnn_model"
